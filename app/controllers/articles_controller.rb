@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(read_article_from_params)
-    @article.user = User.first
+    @article.user = current_user
 
     if @article.save
       flash[:notification] = 'Article was created successfully'

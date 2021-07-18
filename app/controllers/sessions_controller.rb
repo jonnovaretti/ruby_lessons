@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     
     def new
-        if !session[:user_id].nil?
+        if logged_in?
             redirect_to articles_path
         end
     end
