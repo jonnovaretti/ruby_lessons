@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     VALID_EMAIL_EXPRESSION = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+    has_many :articles
+
     validates :username, presence: true, 
                          length: { minimum: 3, maximum: 20 }, 
                          uniqueness: { case_sensitive: false }
