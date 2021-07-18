@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     VALID_EMAIL_EXPRESSION = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+    before_save { self.email = email.downcase }
     has_many :articles
 
     validates :username, presence: true, 
