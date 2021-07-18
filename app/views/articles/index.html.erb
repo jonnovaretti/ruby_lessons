@@ -1,24 +1,26 @@
-<h1>Articles</h1>
+<div class="text-center mb-3">
+    <h1>Articles</h1>
+</div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th colspan="3">Action</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container">
+    <div class="row">
         <% @articles.each do |article| %>
-            <tr>
-              <td><%= article.title %></td>
-              <td><%= article.description %></td>
-              <td><%= link_to "Show", article_path(article) %></td>
-              <td><%= link_to "Edit", edit_article_path(article) %></td>
-              <td><%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Deseja continuar?"} %></td>
-            </tr>
+            <div class="col-4">
+                <div class="card border-success mb-3 shadow mb-5 bg-white rounded" style="max-width: 18rem;">
+                <div class="card-header bg-transparent border-success text-center"><small>asdasd</small></div>
+                <div class="card-body">
+                    <h5 class="card-title text-success"><%= article.title %></h5>
+                    <p class="card-text"> <%= truncate(article.description, length: 50) %> </p>
+                </div>
+                <div class="card-footer bg-transparent border-success text-center">
+                    <%= link_to "Show", article_path(article), class:"btn btn-outline-primary" %>
+                    <%= link_to "Edit", edit_article_path(article), class:"btn btn-outline-success" %>
+                    <%= link_to "Delete", article_path(article), class:"btn btn-outline-danger", method: :delete, data: { confirm: "Deseja continuar?"} %>
+                </div>
+                </div>
+            </div>
         <% end %>
-    </tbody>
-</table>
+    </div>
+</div>
 <br>
 <%= link_to "Create", new_article_path %>
