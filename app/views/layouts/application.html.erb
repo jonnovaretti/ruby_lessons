@@ -11,10 +11,10 @@
   </head>
 
   <body class="d-flex flex-column h-100">
-    <header>
-      <%= render "layouts/navbar" %>
-    </header>
-    <%= render "layouts/notification" %>
-    <%= yield %>
+    <%= render "layouts/navbar" %>
+    <div class="page-content">
+      <%= render "layouts/notification" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -34,14 +34,7 @@
     padding-bottom: 1rem!important;
 }
 
-footer {
-    display: block;
-}
-
-.mt-auto {
-    margin-top: auto!important;
-}
-
-main>.container{
-    padding-top: 60px;
+#page-content {
+    flex: 1 0 auto;
+    background-color: lightgrey;
 }
