@@ -2,12 +2,13 @@
     <h1>Articles</h1>
 </div>
 
+
 <div class="container">
     <div class="row">
         <% @articles.each do |article| %>
             <div class="col-4">
                 <div class="card border-success mb-3 shadow mb-5 bg-white rounded" style="max-width: 18rem;">
-                <div class="card-header bg-transparent border-success text-center"><small>asdasd</small></div>
+                <div class="card-header bg-transparent border-success text-center"><small>by <%= article.user.username %></small></div>
                 <div class="card-body">
                     <h5 class="card-title text-success"><%= article.title %></h5>
                     <p class="card-text"> <%= truncate(article.description, length: 50) %> </p>
@@ -21,5 +22,8 @@
             </div>
         <% end %>
     </div>
+    
+    <div class="digg_pagination">
+        <%= will_paginate @articles, :container => false %>
+    </div>
 </div>
-<br>

@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def show; end
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 6)
   end
 
   def new
@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(read_article_from_params)
+    @article.user = current_user
 
     if @article.save
       flash[:notification] = 'Article was created successfully'
