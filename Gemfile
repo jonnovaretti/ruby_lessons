@@ -23,6 +23,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'will_paginate', '~> 3.3.0'
 
+# Require for unit test in Ruby 3.0
+gem 'rexml', require: false
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
