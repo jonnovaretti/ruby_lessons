@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 # Use Puma as the app server
@@ -24,7 +24,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.3.0'
 
 # Require for unit test in Ruby 3.0
-gem 'rexml', require: false
+gem 'rexml', '~> 3.2.5'
+
+gem 'rubocop', '~> 1.18.3'
+
+gem 'reek', '~> 6.0.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

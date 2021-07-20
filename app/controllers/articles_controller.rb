@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
-  before_action :require_user, except: [:show, :index]
+  before_action :require_user, except: %i[show index]
 
   def show; end
 
